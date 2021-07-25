@@ -3,5 +3,12 @@ from flask import Blueprint
 main = Blueprint('main', __name__)
 
 @main.route('/')
-def index():
-	return "Hello, World! This is the main page."
+def home():
+	posts = [
+		{
+			"body": "Hello, this is a post",
+			"timestamp": "This is a date and time",
+		}
+	]
+	
+	return render_template("home.html", posts=posts)
