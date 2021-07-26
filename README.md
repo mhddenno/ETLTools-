@@ -11,7 +11,7 @@ pip3 install -r requirements.txt
 ## install and open notebook from the virtual environment:
 ```
 python -m pip install ipykernel
-ipython kernel install --user --name=RecommederSystem
+ipython kernel install --user --name=Something
 jupyter lab &
 ```
 
