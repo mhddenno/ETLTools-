@@ -1,6 +1,6 @@
 from flask import Flask, config
-from project.main.routes import main
-from project.admin.routes import admin
+from main.routes import main
+from admin.routes import admin
 
 app = Flask(__name__)
 
