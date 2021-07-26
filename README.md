@@ -1,5 +1,14 @@
 # ETLTools-
 
+## Manage python versions:
+```
+pyenv install --list
+pyenv install 3.9.6
+```
+### See the link:
+[https://realpython.com/intro-to-pyenv/#why-use-pyenv]
+
+
 ## Activate Virtual env:
 ```
 virtualenv --python=/usr/bin/python3* venv
