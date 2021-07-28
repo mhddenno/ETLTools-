@@ -1,0 +1,50 @@
+stages:
+  - build
+  - collect
+  - validate
+  - transform
+  - test
+
+.setup_app:
+  image: python:3.9.6-buster
+  before_script:
+    - apt-get -qq -o=Dpkg::Use-Pty=0 update && apt-get -qq -o=Dpkg::Use-Pty=0 upgrade -y
+    - python -m venv env
+    - source env/bin/activate
+    - pip install --upgrade pip -q
+    - pip install poetry
+    - poetry install
+
+build:
+  stage: build
+  script:
+    - echo "Building"
+    - mkdir build
+    - touch build/info.txt
+  artifacts:
+    paths:
+      - build/
+
+collect:
+  stage: collect
+  script:
+    - echo "Collecting"
+
+validate:
+  stage: validate
+  script:
+    - echo "Validating"
+
+transform:
+  stage: transform
+  script:
+    - echo "Transforming"
+
+test:
+  stage: test
+  script:
+    - echo "Testing"
+    - test -f "build/info.txt"
+
+
+    
